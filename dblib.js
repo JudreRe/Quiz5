@@ -1,6 +1,6 @@
-// Add packages
+
 require("dotenv").config();
-// Add database package and connection string
+
 const { Pool } = require('pg');
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
@@ -26,7 +26,7 @@ const getTotalRecords = () => {
 };
 
 const insertCar = (car) => {
-    // Will accept either a car array or car object
+    
     if (car instanceof Array) {
         params = car;
     } else {
@@ -53,15 +53,13 @@ const insertCar = (car) => {
 
 
 const findCar = (car) => {
-    // Will build query based on data provided from the form
-    //  Use parameters to avoid sql injection
+    
 
-    // Declare variables
     var i = 1;
     params = [];
     sql = "SELECT * FROM car WHERE true";
 
-    // Check data provided and build query as necessary
+
     if (car.carvin !== "") {
         params.push(parseInt(car.carvin));
         sql += ` AND carvin = $${i}`;
@@ -84,7 +82,7 @@ const findCar = (car) => {
     };
 
     sql += ` ORDER BY carvin`;
-    // for debugging
+
      console.log("sql: " + sql);
      console.log("params: " + params);
 
@@ -103,7 +101,6 @@ const findCar = (car) => {
         });
 };
 
-// Add towards the bottom of the page
 module.exports.findCar = findCar;
 module.exports.insertCar = insertCar;
 module.exports.getTotalRecords = getTotalRecords;

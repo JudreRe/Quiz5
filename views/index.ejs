@@ -5,22 +5,22 @@
 <form action="/" method="POST">
     <table>
         <tr>
-            <td><label for="carvin">VIN</label>:</td>
+            <td><label class="col-form-label col-sm-2" for="carvin">VIN</label>:</td>
             <td><input type="number" name="carvin" id="carvin" value="<%= car.carvin %>" /></td>
             <td>(equal)</td>
         </tr>
         <tr>
-            <td><label for="carmake">Make</label>:</td>
+            <td><label class="col-form-label col-sm-2" for="carmake">Make</label>:</td>
             <td><input type="text" name="carmake" id="carmake" value="<%= car.carmake %>" /></td>
             <td>(starts with)</td>
         </tr>
         <tr>
-            <td><label for="carmodel">Model</label>:</td>
+            <td><label class="col-form-label col-sm-2" for="carmodel">Model</label>:</td>
             <td><input type="text" name="carmodel" id="carmodel" value="<%= car.carmodel %>" /></td>
             <td>(begins with)</td>
         </tr>
         <tr>
-            <td><label for="carmileage">Mileage</label>:</td>
+            <td><label class="col-form-label col-sm-2" for="carmileage">Mileage</label>:</td>
             <td><input type="number" name="carmileage" id="carmileage" value="<%= car.carmileage %>" /></td>
             <td>(greater than or equal)</td>
         </tr>
@@ -37,7 +37,8 @@
     <% if (result.result.length === 0) { %>
         <h3>No records found!</h3>
     <% } else { %>
-        <table>
+        
+        <table class="table table-hover">
             <thead>
                 <tr>
                     <th>VIN</th>
