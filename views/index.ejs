@@ -21,13 +21,13 @@
         </tr>
         <tr>
             <td><label for="carmileage">Mileage</label>:</td>
-            <td><input type="text" name="carmileage" id="carmileage" value="<%= car.carmileage %>" /></td>
+            <td><input type="number" name="carmileage" id="carmileage" value="<%= car.carmileage %>" /></td>
             <td>(greater than or equal)</td>
         </tr>
         <tr>
             <td span="2">
-                <input type="submit" value="Find" />
-                <input type="reset" value="Reset" />
+                <input class ="btn btn-primary" type="submit" value="Find" />
+                <input class ="btn btn-primary" type="reset" value="Reset" />
             </td>
         </tr>
     </table>
@@ -40,10 +40,10 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Desc</th>
-                    <th>Price</th>
+                    <th>VIN</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Mileage</th>
                 </tr>
             </thead>
             <tbody>

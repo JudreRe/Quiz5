@@ -1,15 +1,18 @@
 const express = require("express");
 const app = express();
 const dblib = require("./dblib.js");
-
+const path = require("path");
 const multer = require("multer");
 const upload = multer();
 
 // Add middleware to parse default urlencoded form
 app.use(express.urlencoded({ extended: false }));
 
+
+
 // Setup EJS
 app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
 
 // Enable CORS (see https://enable-cors.org/server_expressjs.html)
 app.use((req, res, next) => {
@@ -22,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 // Application folders
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Start listener
 app.listen(process.env.PORT || 3000, () => {
